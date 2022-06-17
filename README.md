@@ -3,7 +3,7 @@ PHP tutorial from the net ninja: https://youtube.com/playlist?list=PL4cUxeGkcC9g
 
 # To make this work
 Make sure you have xampp installed and set up a mysql database.
-Then add a database.php file with the following content
+Then add a database.php file with the following content:
 
 ```
 <?php
