@@ -1,5 +1,6 @@
 <?php 
 
+    require('database.php');
     $title = $email = $ingredients = '';
     $errors = array('email'=>'','title'=>'','ingredients'=>'');
     
@@ -37,7 +38,26 @@
 
         //checking for errors and redirecting
         if(!array_filter($errors)){
-            header('Location: index.php');
+            $email = mysqli_real_escape_string($conn, $_POST['email']);
+            $title = mysqli_real_escape_string($conn, $_POST['title']);
+            $ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
+
+            //insert into
+            $sql = "INSERT INTO pizzas(title, email, ingredients) 
+                    VALUES('$title', '$email','$ingredients')";
+            
+            //Save to database and check
+            if(mysqli_query($conn, $sql)){
+                //Success
+                header('Location: index.php');
+            }else{
+                //error
+                echo 'Query failed: ' . mysqli_error($conn);
+            }
+
+
+
+            
         }
 
     } // end of post check
@@ -51,7 +71,7 @@
 
 <section class="container grey-text">
     <h4 class="center">Add a Pizza</h4>
-    <form action="add.php" method="POST" class="white">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" class="white">
         <label for="">Your Email</label>
         <div class="red-text"><?php echo $errors['email']; ?></div>
         <input type="text" name="email" value="<?php echo $email; ?>">
