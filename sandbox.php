@@ -88,15 +88,58 @@
 
     // unlink($file);
 
-    
+    // Classes
 
+    class User {
 
+        private $email;
+        private $name;
 
-    
+        public function __construct($email, $name)
+        {
+            $this->email = $email;
+            $this->name = $name;
+        }
 
+        public function login(){
+            echo $this->name . ' logged in ';
+        }
 
-    
+        public function getName(){
+            return $this->name;
+        }
+        public function getEmail(){
+            return $this->email;
+        }
 
+        public function setName($name){
+            if(is_string($name) && strlen($name) > 1){
+                $this->name = $name;
+                return "Name was changed to $name";
+            }else{
+                return 'Not a valid name';
+            }
+            
+        }
+        public function setEmail($email){
+            if(str_contains($email,"@") && str_contains($email,'.')){
+                $this->email = $email;
+                return "Email was changed to $email";
+            }else{
+                return 'Not a valid email';
+            }
+        }
+
+    }
+
+    $userOne = new User("jorgen@hotmail.com",'Jørgen');
+
+    $userOne->login();
+    echo $userOne->getName() . '<br />';
+    echo $userOne->getEmail() . '<br />';
+
+    echo $userOne->setName("Høkken") . '<br />';
+    echo $userOne->setEmail('Horge@hotmail.com') . '<br />';
 ?>
 
 
