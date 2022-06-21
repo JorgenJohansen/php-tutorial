@@ -30,6 +30,38 @@
     //     header('Location: index.php');
     // }
 
+    // File system
+
+    // $quotes = readfile('readme.txt');
+
+    // echo $quotes;
+
+    // $file = 'readme.txt';
+
+    // if(file_exists($file)){
+    //     // echo readfile($file) . '<br />';
+
+    //     // //Copy file
+
+    //     // copy($file, 'quotes.txt');
+
+    //     // //absolute path
+    //     // echo realpath($file) . '<br />';
+
+    //     // //file size
+    //     // echo filesize($file) . ' bytes' . '<br />';
+
+    //     // //rename file
+    //     // rename($file, 'test.txt');
+    // }else{
+    //     echo 'No such file';
+    // }
+
+    //make directory
+    // mkdir('quotes');
+
+    
+
     
 
 
