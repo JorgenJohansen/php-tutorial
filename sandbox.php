@@ -60,7 +60,37 @@
     //make directory
     // mkdir('quotes');
 
+    //File system part 2
     
+    //filename
+    $file = 'quotes.txt';
+
+    //opening a file for reading
+    // $handle = fopen($file, 'a+');
+
+    // //read the file
+    // // echo fread($handle, filesize($file));
+    // // echo fread($handle, 112);
+
+    // //read a single line // uses a pointer which goes to the next line after calling method
+    // // echo fgets($handle);
+    // // echo fgets($handle);
+    
+
+    // //read a single character // uses a pointer which goes to the next character after calling method
+    // // echo fgetc($handle);
+    // // echo fgetc($handle);
+
+    // //writing to a file
+    // fwrite($handle, "\nEverything popular is wrong.");
+
+    // fclose($handle);
+
+    // unlink($file);
+
+    
+
+
 
     
 
