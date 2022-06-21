@@ -14,14 +14,23 @@
 
     //sessions
     //server stores information
-    if(isset($_POST['submit'])){
-        session_start();
-        //storing name in session
-        $_SESSION['name'] = $_POST['name'];
-        echo $_SESSION['name'];
+    // if(isset($_POST['submit'])){
 
-        header('Location: index.php');
-    }
+    //     $dayInSeconds = 86400;
+
+    //     //cookie for gender
+    //     //The method needs a value, the method and expiration date
+    //     setcookie('gender', $_POST['gender'], time() + $dayInSeconds);
+
+    //     session_start();
+    //     //storing name in session
+    //     $_SESSION['name'] = $_POST['name'];
+    //     echo $_SESSION['name'];
+
+    //     header('Location: index.php');
+    // }
+
+    
 
 
     
@@ -39,10 +48,14 @@
 </head>
 <body>
     <!-- <p><?php echo $score > 40 ?  'High score!' :  'low score :('; ?></p> -->
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+    <!-- <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         <input type="text" name="name">
+        <select name="gender">
+			<option value="male">male</option>
+			<option value="female">female</option>
+		</select>
         <input type="submit" name="submit" value="submit">
-    </form>
+    </form> -->
 
 </body>
 </html>
